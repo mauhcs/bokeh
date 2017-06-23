@@ -64,7 +64,14 @@ script:
 
   # unit tests
   - if [[ -z "$TRAVIS_TAG" && "$GROUP" == unit ]]; then
+<<<<<<< HEAD
       py.test --rerun=5 -m 'unit or selenium' --cov=bokeh --cov-config=bokeh/.coveragerc;
+=======
+      py.test -s -m js;
+    fi
+  - if [[ -z "$TRAVIS_TAG" && "$GROUP" == unit ]]; then
+      py.test --rerun=5 -m 'unit' --cov=bokeh --cov-config=bokeh/.coveragerc;
+>>>>>>> pytest -m unit includes selenium unit tests
     fi
 
   # examples tests
